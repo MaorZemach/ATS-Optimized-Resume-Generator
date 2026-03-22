@@ -1,0 +1,57 @@
+{
+  "contact_info": {
+    "name": "Maor Zemach",
+    "email": "maorize1@gmail.com",
+    "phone": "052-3136036",
+    "linkedin": "www.linkedin.com/in/maor-zemach-7217172b8",
+    "github": "https://github.com/yourusername"
+  },
+  "summary": [
+    "IT Specialist & Technical Support Engineer with a proactive approach to problem-solving and providing L1-L2 support. Highly reliable, adaptable to new systems, and passionate about providing exceptional technical support and optimizing workflows.",
+    "Systems Engineer and System Administrator with hands-on experience in multi-site Windows environments, Active Directory, and VMware. Known for managing identity lifecycles, maintaining composure under pressure, and delivering robust infrastructure solutions.",
+    "Computer Science graduate (B.Sc.) and AWS Certified IT professional with a strong foundation in Python, C++, and infrastructure virtualization. Passionate about transitioning into Cloud and DevOps roles, bringing a developer's mindset to system administration and automation."
+  ],
+  "experience": [
+    {
+      "role": "Technical Support & Systems Engineer",
+      "company": "Dan Hotels",
+      "dates": "2024 - Present",
+      "bullets": [
+        "Supporting a complex multi-site Windows environment serving over 1000 end-users.",
+        "Manage identity lifecycle, permission models, and Group Policies using Active Directory.",
+        "Provision, configure, and maintain VMware Virtual Machines (VMs), including snapshot management and resource allocation.",
+        "Administer and support remote DaaS sessions and Citrix environments to ensure seamless remote access.",
+        "Provide advanced L1-L2 technical support, troubleshooting hardware, software, and TCP/IP networking protocols.",
+        "Manage and support Microsoft Exchange services and mailboxes for enterprise users.",
+        "Continuously optimize daily workflows and quickly adapt to new internal systems to reduce ticket resolution times."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Sc. in Computer Science",
+      "institution": "The Academic College of Tel Aviv�Yafo",
+      "dates": "2019 - 2023"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Technical Essentials",
+      "issuer": "Amazon Web Services",
+      "date": "Valid"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Academic / Personal Project Name",
+      "description": "Describe a project from your B.Sc. degree or a home lab that uses Python, C++, or AWS. E.g., 'Developed a web application using Python...'"
+    }
+  ],
+  "skills": {
+    "OS_and_Infrastructure": [ "Windows Server", "Active Directory", "Microsoft Exchange" ],
+    "Cloud_and_Virtualization": [ "AWS", "VMware", "Citrix", "DaaS (Desktop as a Service)" ],
+    "Networking": [ "TCP/IP protocol", "DNS", "DHCP" ],
+    "Scripting_and_Programming": [ "Python", "C", "C++", "C#" ],
+    "Languages": [ "Hebrew (Fluent)", "English (Advanced)" ]
+  }
+}

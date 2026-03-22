@@ -1,0 +1,4 @@
+.env
+__pycache__/
+*.pdf
+tailored_resume.md
