@@ -9,6 +9,7 @@ import json
 import os
 import re
 import sys
+import time
 from pathlib import Path
 
 import anthropic
@@ -153,7 +154,7 @@ CRITICAL RULES — READ THESE BEFORE WRITING ANYTHING:
 Follow this exact Markdown structure:
 
 # [Candidate Full Name]
-[email] | [phone] | [linkedin] | [github]
+[website] | [linkedin] | [email] | [phone]
 
 ---
 
@@ -191,7 +192,12 @@ Follow this exact Markdown structure:
 ---
 
 ## Projects
-**[Project Name]:** [Description — only include if relevant to the JD]
+
+**[Project Name]**
+[Description — only include if relevant to the JD]
+
+**[Project Name]**
+[Description — only include if relevant to the JD]
 
 ---
 
@@ -273,25 +279,35 @@ def tailor_resume(resume: dict, job_description: str) -> str:
     print("[*] Sending to Claude (streaming with adaptive thinking)...")
     print("[*] Generating tailored resume — this may take 15–30 seconds...\n")
 
-    collected_text = []
+    max_retries = 3
+    for attempt in range(1, max_retries + 1):
+        try:
+            collected_text = []
 
-    with client.messages.stream(
-        model=MODEL,
-        max_tokens=4096,
-        thinking={"type": "adaptive"},
-        system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": user_message}],
-    ) as stream:
-        for event in stream:
-            if (
-                event.type == "content_block_delta"
-                and hasattr(event.delta, "type")
-                and event.delta.type == "text_delta"
-            ):
-                print(event.delta.text, end="", flush=True)
-                collected_text.append(event.delta.text)
+            with client.messages.stream(
+                model=MODEL,
+                max_tokens=4096,
+                thinking={"type": "adaptive"},
+                system=SYSTEM_PROMPT,
+                messages=[{"role": "user", "content": user_message}],
+            ) as stream:
+                for event in stream:
+                    if (
+                        event.type == "content_block_delta"
+                        and hasattr(event.delta, "type")
+                        and event.delta.type == "text_delta"
+                    ):
+                        print(event.delta.text, end="", flush=True)
+                        collected_text.append(event.delta.text)
 
-        final = stream.get_final_message()
+                final = stream.get_final_message()
+            break  # success — exit retry loop
+        except anthropic.APIStatusError as e:
+            if e.status_code == 529 and attempt < max_retries:
+                print(f"\n[WARNING] API is overloaded, waiting 5 seconds before retrying... (attempt {attempt}/{max_retries})")
+                time.sleep(5)
+            else:
+                raise
 
     # Prefer the verified full text from the final message object
     full_text = ""

@@ -1,9 +1,17 @@
 {
   "contact_info": {
+<<<<<<< HEAD
     "name": "Maor Zemach",
     "email": "maorize1@gmail.com",
     "phone": "052-3136036",
     "linkedin": "www.linkedin.com/in/maor-zemach-7217172b8",
+    "website": "maor-zemach.netlify.app",
+=======
+    "name": "Full Name",
+    "email": "youremail@mail.com",
+    "phone": "00000000",
+    "linkedin": "www.linkedin.com/your-url",
+>>>>>>> 94733342ac2a7ea71dc575ab9417c8336ab9ab50
     "github": "https://github.com/yourusername"
   },
   "summary": [
