@@ -1,9 +1,9 @@
 {
   "contact_info": {
-    "name": "Full Name",
-    "email": "youremail@mail.com",
-    "phone": "00000000",
-    "linkedin": "www.linkedin.com/your-url",
+    "name": "Maor Zemach",
+    "email": "maorize1@gmail.com",
+    "phone": "052-3136036",
+    "linkedin": "www.linkedin.com/in/maor-zemach-7217172b8",
     "github": "https://github.com/yourusername"
   },
   "summary": [
@@ -43,8 +43,12 @@
   ],
   "projects": [
     {
-      "name": "Academic / Personal Project Name",
-      "description": "Describe a project from your B.Sc. degree or a home lab that uses Python, C++, or AWS. E.g., 'Developed a web application using Python...'"
+      "name": "ATS-Optimized Resume Generator (AI Automation)",
+      "description": "Developed a Python-based CLI tool using the Anthropic API to automate the generation of tailored, ATS-friendly resumes. Integrated PDF generation via pdfkit and environment-based secret management."
+    },
+    {
+      "name": "Cloud-Native IT Portfolio & Automated CI/CD Pipeline",
+      "description": "Architected a serverless web application with Git-based CI/CD workflows for zero-downtime automated deployments via GitHub and Netlify. Hardened infrastructure security with custom HTTP headers and integrated serverless form handling for automated spam mitigation."
     }
   ],
   "skills": {
